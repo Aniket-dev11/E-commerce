@@ -37,28 +37,8 @@ const cartReducer = (state, action) => {
   }
 };
 
-const getInitialCartState = () => {
-  try {
-    const storedCart = localStorage.getItem("cart");
-    return storedCart && storedCart !== "undefined"
-      ? JSON.parse(storedCart)
-      : [];
-  } catch (err) {
-    console.error("Failed to parse cart from localStorage:", err);
-    return [];
-  }
-};
-
 export const ShoppingCartProvider = ({ children }) => {
-  const [cartItems, dispatch] = useReducer(
-    cartReducer,
-    [],
-    getInitialCartState
-  );
-
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-  }, [cartItems]);
+  const [cartItems, dispatch] = useReducer(cartReducer, []);
 
   const calculateTotal = () => {
     return cartItems
