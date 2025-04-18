@@ -1,0 +1,52 @@
+.cart-body {
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.cart-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cart-body::-webkit-scrollbar-thumb {
+  background-color: #dee2e6;
+  border-radius: 10px;
+}
+
+.qty-controls .btn {
+  height: 32px;
+  padding: 0;
+  width: 32px;
+}
+
+.qty-display {
+  align-items: center;
+  display: flex;
+  font-weight: 500;
+  justify-content: center;
+  text-align: center;
+  width: 30px;
+}
+
+.btn-trash {
+  align-items: center;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  width: 32px;
+}
+
+.btn-trash:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-wrap {
+  word-break: break-word;
+}
