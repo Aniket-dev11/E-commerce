@@ -116,7 +116,13 @@ const ShoppingCartModal = ({ isVisible, onClose }) => {
           <h5 className="mb-0">
             Total: <span className="text-success">${calculateTotal()}</span>{" "}
           </h5>
-          <Button variant="success" onClick={onClose}>
+          <Button
+            variant="success"
+            onClick={() => {
+              dispatch({ type: "CLEAR_CART" });
+              onClose();
+            }}
+          >
             Proceed to Checkout
           </Button>
         </Modal.Footer>

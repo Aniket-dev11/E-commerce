@@ -29,6 +29,9 @@ const cartReducer = (state, action) => {
     case "REMOVE_ITEM":
       return state.filter((item) => item.id !== action.payload);
 
+    case "CLEAR_CART":
+      return [];
+
     default:
       return state;
   }
@@ -67,8 +70,6 @@ export const ShoppingCartProvider = ({ children }) => {
     <ShoppingCartContext.Provider
       value={{ cartItems, dispatch, calculateTotal }}
     >
-      {" "}
-      {/* */}
       {children}
     </ShoppingCartContext.Provider>
   );
